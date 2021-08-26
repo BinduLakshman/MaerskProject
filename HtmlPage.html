@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Shuffle and Sort</title>
+	<meta charset="UTF-8">
+	<!--<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/normalize.css" />-->
+    <script src="js.js"></script>
+    <link href="css.css" rel="stylesheet" />
+	<!--<script src="js/script.js"></script>-->
+	<script>
+        function sortList() {
+            var list, i, switching, b, shouldSwitch;
+            list = document.getElementById("shuffleAndSort");
+            switching = true;
+           while (switching) {
+               switching = false;
+                b = list.getElementsByTagName("LI");
+                for (i = 0; i < (b.length - 1) ; i++) {
+                   shouldSwitch = false;
+                   if (Number(b[i].innerHTML) > Number(b[i + 1].innerHTML)) {
+                       shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                    switching = true;
+                }
+            }
+        }
+	</script>
+
+</head>
+<body>
+ <div class="wrapper">
+ 	<header>
+		<h1>Shuffel and Sort</h1>
+		<div class="line"></div>
+	</header>
+
+	<aside>
+	<button id="shuffle" type="button" class="btn blue active">Shuffle</button>
+	<button type="button" onclick="sortList()" class="btn blue" >Sort</button>
+		 
+	</aside> 
+
+    <section> 
+		<article>
+			 <ul id="shuffleAndSort">
+			 	<li class="li-1">1</li>
+			 	<li class="li-2">2</li>
+			 	<li class="li-3">3</li>
+			 	<li class="li-4">4</li>
+			 	<li class="li-5">5</li>
+			 	<li class="li-6">6</li>
+			 	<li class="li-7">7</li>
+			 	<li class="li-8">8</li>
+			 	<li class="li-9">9</li>
+			 </ul>  
+		</article> 
+	</section> 
+
+	<footer>
+	
+	</footer>
+  </div> 
+</body>
+</html>
